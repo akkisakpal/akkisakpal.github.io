@@ -2,14 +2,11 @@
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
-<title>Akshay Sakpal | Data Analyst</title>
+<title>Akshay Sakpal | Systems-Focused Data Analyst</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Akshay Sakpal – Data Analyst & Junior Data Scientist focused on patterns, systems, and clarity.">
+<meta name="description" content="Akshay Sakpal – Systems-focused Data Analyst & Junior Data Scientist.">
 
 <style>
-/* =====================
-   THEME
-===================== */
 :root {
   --bg:#ffffff;
   --text:#0f172a;
@@ -41,9 +38,18 @@ body{
   overflow-x:hidden;
 }
 
-/* =====================
-   PREMIUM BACKGROUND
-===================== */
+/* Scroll Progress */
+.progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:3px;
+  background:var(--accent);
+  width:0%;
+  z-index:9999;
+}
+
+/* Background */
 body::before{
   content:"";
   position:fixed;
@@ -66,9 +72,7 @@ body::before{
 }
 @media (hover:hover){.spotlight{opacity:1}}
 
-/* =====================
-   LAYOUT
-===================== */
+/* Layout */
 .container{
   max-width:980px;
   margin:auto;
@@ -78,7 +82,6 @@ body::before{
 h1{
   font-size:clamp(2.8rem,4vw,3.4rem);
   font-weight:500;
-  letter-spacing:-.02em;
   margin-bottom:18px;
 }
 
@@ -90,12 +93,9 @@ h2{
 }
 
 p{max-width:65ch;margin-bottom:1.4em}
-
 a{color:var(--accent);text-decoration:none}
 
-/* =====================
-   DARK MODE TOGGLE
-===================== */
+/* Toggle */
 .toggle{
   position:fixed;
   top:24px;
@@ -109,14 +109,12 @@ a{color:var(--accent);text-decoration:none}
   font-size:1.2rem;
   cursor:pointer;
   box-shadow:0 14px 36px rgba(37,99,235,.45);
-  transition:all .35s ease;
+  transition:.3s;
   z-index:999;
 }
 .toggle:hover{transform:scale(1.1) rotate(10deg)}
 
-/* =====================
-   HERO
-===================== */
+/* Hero */
 .hero{
   display:grid;
   grid-template-columns:1.2fr .8fr;
@@ -132,7 +130,8 @@ a{color:var(--accent);text-decoration:none}
 }
 .hero-text h1{animation-delay:.1s}
 .hero-text .subtitle{animation-delay:.25s}
-.hero-text .actions{animation-delay:.4s}
+.hero-text .signature{animation-delay:.35s}
+.hero-text .actions{animation-delay:.5s}
 
 @keyframes rise{
   to{opacity:1;transform:none}
@@ -142,34 +141,21 @@ a{color:var(--accent);text-decoration:none}
   color:var(--muted);
   font-size:1.1rem;
   max-width:520px;
-  margin-bottom:38px;
 }
 
-/* Name underline */
-.hero-text h1 span{
-  position:relative;
-}
-.hero-text h1 span::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:100%;
-  height:2px;
-  background:linear-gradient(to right,var(--accent),transparent);
-  opacity:.6;
+.signature{
+  margin-top:14px;
+  font-weight:500;
 }
 
-/* Actions */
 .actions a{
   display:inline-block;
   padding:11px 22px;
   margin-right:12px;
-  margin-top:12px;
+  margin-top:18px;
   border-radius:999px;
   border:1px solid var(--border);
-  font-size:.95rem;
-  transition:all .25s ease;
+  transition:.25s;
   color:inherit;
 }
 .actions a:hover{
@@ -186,32 +172,37 @@ a{color:var(--accent);text-decoration:none}
   object-fit:cover;
   filter:grayscale(60%);
   box-shadow:0 24px 54px var(--shadow);
-  transition:filter .4s,transform .4s;
+  transition:.4s;
 }
 .portrait img:hover{
   filter:grayscale(40%);
   transform:translateY(-6px);
 }
 
-/* =====================
-   HIGHLIGHTS
-===================== */
-.highlights{
+/* Evolution Timeline */
+.evolution{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:28px;
-  margin-top:40px;
-}
-.highlight{
-  padding:22px;
-  border-radius:14px;
-  background:var(--card);
-  border:1px solid var(--border);
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:24px;
+  margin-top:36px;
 }
 
-/* =====================
-   PROJECTS
-===================== */
+.stage{
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:var(--card);
+  text-align:center;
+  opacity:0;
+  transform:translateY(20px);
+  transition:.6s ease;
+}
+.stage.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* Project Cards */
 .project{
   display:block;
   padding:28px;
@@ -219,29 +210,27 @@ a{color:var(--accent);text-decoration:none}
   border-radius:16px;
   background:var(--card);
   border:1px solid var(--border);
-  transition:all .4s ease;
+  transition:.4s ease;
   color:inherit;
-  perspective:800px;
 }
 .project:hover{
-  transform:translateY(-6px) rotateX(1deg);
-  box-shadow:0 22px 56px var(--shadow);
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 26px 64px var(--shadow);
 }
 
-/* =====================
-   CONTACT
-===================== */
+/* Contact */
 .contact{
   margin-top:130px;
   padding-top:34px;
   border-top:1px solid var(--border);
   color:var(--muted);
 }
-.contact a:hover{text-decoration:underline;text-underline-offset:4px}
 
-/* =====================
-   MOBILE
-===================== */
+:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:4px;
+}
+
 @media(max-width:768px){
   .hero{grid-template-columns:1fr;gap:52px}
   .portrait{order:-1}
@@ -253,6 +242,7 @@ a{color:var(--accent);text-decoration:none}
 
 <body>
 
+<div class="progress"></div>
 <div class="spotlight"></div>
 <button class="toggle" id="themeToggle">💡</button>
 
@@ -260,10 +250,12 @@ a{color:var(--accent);text-decoration:none}
 
 <section class="hero">
   <div class="hero-text">
-    <h1><span>Akshay Sakpal</span></h1>
+    <h1>Akshay Sakpal</h1>
     <p class="subtitle">
-      Data Analyst & Junior Data Scientist focused on patterns,
-      systems, and clarity.
+      Systems-focused Data Analyst & Junior Data Scientist.
+    </p>
+    <p class="signature">
+      I design systems that reduce uncertainty.
     </p>
 
     <div class="actions">
@@ -279,40 +271,40 @@ a{color:var(--accent);text-decoration:none}
   </div>
 </section>
 
-<h2>Selected Highlights</h2>
-<div class="highlights">
-  <div class="highlight">Built anomaly detection systems on JVM metrics</div>
-  <div class="highlight">Strong Python, SQL & data pipeline foundations</div>
-  <div class="highlight">Focus on interpretable, real-world analytics</div>
+<h2>How My Thinking Evolved</h2>
+<div class="evolution">
+  <div class="stage">Engineering Foundations</div>
+  <div class="stage">Curiosity About Signals</div>
+  <div class="stage">Understanding Systems</div>
+  <div class="stage">Designing Reliable Models</div>
 </div>
 
-<h2>How I Think</h2>
+<h2>What I'm Exploring Now</h2>
 <p>
-I approach data problems as systems — understanding inputs, behavior,
-constraints, and failure modes before choosing models.
-I value clarity over complexity and robustness over novelty.
+Data reliability engineering, monitoring & observability systems,
+model interpretability, and scalable anomaly detection frameworks.
 </p>
 
-<h2 id="projects">Projects</h2>
+<h2 id="projects">Selected Work</h2>
 
 <a class="project" href="projects/memory-leak.html">
 <strong>Multivariate Anomaly Detection for Memory Leaks</strong><br>
-Detecting abnormal JVM memory behavior using LSTM-based time-series models.
+From reactive monitoring to predictive anomaly detection in JVM systems.
 </a>
 
 <a class="project" href="projects/etl-pipeline.html">
 <strong>End-to-End ETL Pipeline with Validation</strong><br>
-Python ETL workflow with cleaning, validation, logging, and failure handling.
+Robust Python-based pipeline with logging and failure management.
 </a>
 
 <a class="project" href="projects/eda.html">
 <strong>Exploratory Data Analysis Portfolio</strong><br>
-Statistical analysis, feature engineering, and data storytelling.
+Feature engineering, statistical interpretation, and data storytelling.
 </a>
 
 <div class="contact">
 <p>
-📧 <a href="mailto:akshaybsakpal@gmail.com">akshaybsakpal@gmail.com</a><br>
+📧 <a href="mailto:akki.sakpal@gmail.com">akki.sakpal@gmail.com</a><br>
 💼 <a href="https://www.linkedin.com/in/akshaysakpal07/" target="_blank">LinkedIn</a><br>
 🧠 <a href="https://github.com/akkisakpal" target="_blank">GitHub</a>
 </p>
@@ -337,9 +329,27 @@ window.addEventListener("mousemove",e=>{
   s.style.setProperty("--y",e.clientY+"px");
 });
 
-/* Background parallax */
+/* Parallax */
 window.addEventListener("scroll",()=>{
   document.body.style.setProperty("--bg-shift",window.scrollY*0.08+"px");
+});
+
+/* Scroll reveal */
+const stages=document.querySelectorAll(".stage");
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+    }
+  });
+},{threshold:.3});
+stages.forEach(stage=>observer.observe(stage));
+
+/* Scroll progress */
+const progress=document.querySelector(".progress");
+window.addEventListener("scroll",()=>{
+  const scrolled=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  progress.style.width=scrolled+"%";
 });
 </script>
 
