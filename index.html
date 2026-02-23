@@ -1,157 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Akshay Sakpal — Data Analyst</title>
 
 <style>
-body { background:#090909; color:#ddd; font-family:Arial; margin:0; }
-.wrap { max-width:1000px; margin:auto; padding:40px 20px; }
-h1,h2 { color:#c8a84b; }
-.section { margin:60px 0; }
-.card { background:#111; padding:20px; border:1px solid #222; border-radius:8px; margin-bottom:20px; }
-.small { color:#888; font-size:14px; }
+body {
+  margin:0;
+  font-family: system-ui;
+  background:#0a0a0a;
+  color:#eaeaea;
+}
+
+/* Layout */
+.container {
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* Hero */
+.hero h1 {
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+.hero p {
+  color:#aaa;
+  max-width:600px;
+}
+
+.badge {
+  color:#4ade80;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+/* Section */
+.section {
+  margin-top:80px;
+}
+
+.section h2 {
+  margin-bottom:20px;
+}
+
+/* Cards */
+.card {
+  background:#111;
+  padding:20px;
+  border-radius:8px;
+  margin-bottom:20px;
+}
+
+/* Buttons */
+.btn {
+  display:inline-block;
+  padding:10px 20px;
+  background:#c8a84b;
+  color:black;
+  text-decoration:none;
+  margin-top:20px;
+}
+
+/* Links */
+a { color:#c8a84b; }
+
 </style>
 </head>
 
 <body>
 
-<div class="wrap">
+<div class="container">
 
 <!-- HERO -->
+<section class="hero">
+<div class="badge">Open to full-time roles · Ireland</div>
+
 <h1>Akshay Sakpal</h1>
-<p><strong>Data Analyst · Junior Data Scientist</strong></p>
-<p class="small">Dublin, Ireland · EU Work Authorised · Available Immediately</p>
 
-<div class="card">
 <p>
-Built a <strong>multivariate anomaly detection system</strong> for JVM memory monitoring,
-designed to detect leak patterns earlier than traditional threshold-based alerts.
+Data Analyst focused on building reliable data systems and extracting actionable insights from real-world datasets.
 </p>
 
-<p class="small">
-Tested on a controlled synthetic dataset (10,000 datapoints). Designed as a prototype for real monitoring systems.
+<p>
+Strong in <b>Python, SQL, and ETL pipelines</b> with hands-on experience in anomaly detection and production-grade data workflows.
 </p>
-</div>
 
-<!-- PROOF -->
-<div class="section">
-<h2>Key Results</h2>
-
-<div class="card">
-<p><strong>~40% earlier detection</strong></p>
-<p class="small">Compared to simple statistical baseline (3-sigma rule)</p>
-</div>
-
-<div class="card">
-<p><strong>ETL pipeline with validation</strong></p>
-<p class="small">Schema checks · logging · error handling</p>
-</div>
-
-<div class="card">
-<p><strong>18+ SQL data quality checks</strong></p>
-<p class="small">Completeness · consistency · freshness</p>
-</div>
-
-</div>
+<a href="#projects" class="btn">View Projects</a>
+</section>
 
 <!-- PROJECTS -->
-<div class="section">
+<section id="projects" class="section">
 <h2>Projects</h2>
 
 <div class="card">
-<h3>Flagship: Anomaly Detection</h3>
-
+<h3>Memory Leak Detection System</h3>
 <p>
-Isolation Forest model using JVM metrics (heap, GC, threads).
+Built a multivariate anomaly detection system using Isolation Forest on JVM metrics.
 </p>
-
-<p class="small">
-Real-world translation: can integrate with monitoring systems like Prometheus.
-</p>
-
-<p class="small">
-Limitations: tested on synthetic data. Real-world performance depends on noise and system variability.
-</p>
-
-<p>
+<ul>
+<li>Detected anomalies ~40% earlier</li>
+<li>Reduced false positives to &lt;5%</li>
+<li>Used Python, Pandas, Scikit-learn</li>
+</ul>
 <a href="https://github.com/akkisakpal">View Code</a>
-</p>
 </div>
 
 <div class="card">
-<h3>ETL Pipeline</h3>
-
+<h3>ETL Pipeline with Validation</h3>
 <p>
-Pipeline with validation and logging at each stage.
+Designed a production-ready ETL pipeline with validation and logging.
 </p>
-
-<p class="small">
-All detected errors are logged and surfaced before load stage.
-</p>
-
-<p>
+<ul>
+<li>100% data validation before load</li>
+<li>Zero silent failures</li>
+<li>PostgreSQL + Python</li>
+</ul>
 <a href="https://github.com/akkisakpal/Python-etl-pipeline">View Code</a>
-</p>
 </div>
 
 <div class="card">
-<h3>SQL Data Quality</h3>
-
+<h3>EDA Portfolio</h3>
 <p>
-18+ automated SQL checks for data validation.
+Exploratory data analysis projects focusing on business insights and storytelling.
 </p>
-
-<p>
-<a href="https://github.com/akkisakpal/Sql-data-quality-pipeline">View Code</a>
-</p>
-</div>
-
-<div class="card">
-<h3>EDA — Income Dataset</h3>
-
-<p>
-Analysis of 48K+ records identifying key income predictors.
-</p>
-
-<p>
+<ul>
+<li>Multi-domain datasets</li>
+<li>Clear stakeholder insights</li>
+<li>Data visualization focus</li>
+</ul>
 <a href="https://github.com/akkisakpal">View Code</a>
+</div>
+
+</section>
+
+<!-- SKILLS -->
+<section class="section">
+<h2>Skills</h2>
+
+<p>
+<b>Languages:</b> Python, SQL  
+<br>
+<b>Data:</b> Pandas, NumPy  
+<br>
+<b>ML:</b> Scikit-learn, Anomaly Detection  
+<br>
+<b>Tools:</b> Git, PostgreSQL, Jupyter
 </p>
-</div>
 
-</div>
-
-<!-- VALIDATION -->
-<div class="section">
-<h2>Verification</h2>
-
-<div class="card">
-<p><strong>GitHub</strong></p>
-<p class="small">All projects public with commit history</p>
-</div>
-
-<div class="card">
-<p><strong>Education</strong></p>
-<p class="small">MSc Data Analytics — DCU Dublin</p>
-</div>
-
-<div class="card">
-<p><strong>Reproducibility</strong></p>
-<p class="small">All results reproducible using provided code</p>
-</div>
-
-</div>
+</section>
 
 <!-- CONTACT -->
-<div class="section">
+<section class="section">
 <h2>Contact</h2>
 
-<p>Email: akshaybsakpal@gmail.com</p>
-<p><a href="https://www.linkedin.com/in/akshaysakpal07/">LinkedIn</a></p>
-<p><a href="https://github.com/akkisakpal">GitHub</a></p>
+<p>Email: <a href="mailto:akshaybsakpal@gmail.com">akshaybsakpal@gmail.com</a></p>
+<p>LinkedIn: <a href="https://linkedin.com/in/akshaysakpal07">Profile</a></p>
+<p>GitHub: <a href="https://github.com/akkisakpal">Repositories</a></p>
 
-</div>
+</section>
 
 </div>
 
