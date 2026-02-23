@@ -1,357 +1,159 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Akshay Sakpal | Systems-Focused Data Analyst</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Akshay Sakpal – Systems-focused Data Analyst & Junior Data Scientist.">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Akshay Sakpal — Data Analyst</title>
 
 <style>
-:root {
-  --bg:#ffffff;
-  --text:#0f172a;
-  --muted:#64748b;
-  --accent:#2563eb;
-  --border:#e5e7eb;
-  --card:#f8fafc;
-  --shadow:rgba(0,0,0,.08);
-}
-
-[data-theme="dark"] {
-  --bg:#020617;
-  --text:#e5e7eb;
-  --muted:#94a3b8;
-  --border:#1e293b;
-  --card:#020617;
-  --shadow:rgba(0,0,0,.45);
-}
-
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.75;
-  transition:background .4s,color .4s;
-  overflow-x:hidden;
-}
-
-/* Scroll Progress */
-.progress{
-  position:fixed;
-  top:0;
-  left:0;
-  height:3px;
-  background:var(--accent);
-  width:0%;
-  z-index:9999;
-}
-
-/* Background */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(800px 500px at 80% -10%, rgba(37,99,235,.10), transparent 60%),
-    radial-gradient(700px 400px at -10% 30%, rgba(99,102,241,.08), transparent 60%);
-  z-index:-2;
-  transform:translateY(var(--bg-shift,0px));
-}
-
-/* Spotlight */
-.spotlight{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:radial-gradient(700px at var(--x) var(--y), rgba(255,255,255,.04), transparent 60%);
-  z-index:-1;
-  opacity:0;
-}
-@media (hover:hover){.spotlight{opacity:1}}
-
-/* Layout */
-.container{
-  max-width:980px;
-  margin:auto;
-  padding:110px 24px;
-}
-
-h1{
-  font-size:clamp(2.8rem,4vw,3.4rem);
-  font-weight:500;
-  margin-bottom:18px;
-}
-
-h2{
-  margin-top:130px;
-  margin-bottom:22px;
-  font-size:1.55rem;
-  font-weight:500;
-}
-
-p{max-width:65ch;margin-bottom:1.4em}
-a{color:var(--accent);text-decoration:none}
-
-/* Toggle */
-.toggle{
-  position:fixed;
-  top:24px;
-  right:24px;
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  border:none;
-  background:linear-gradient(135deg,#2563eb,#1e40af);
-  color:#fff;
-  font-size:1.2rem;
-  cursor:pointer;
-  box-shadow:0 14px 36px rgba(37,99,235,.45);
-  transition:.3s;
-  z-index:999;
-}
-.toggle:hover{transform:scale(1.1) rotate(10deg)}
-
-/* Hero */
-.hero{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:70px;
-  align-items:center;
-  margin-bottom:150px;
-}
-
-.hero-text>*{
-  opacity:0;
-  transform:translateY(20px);
-  animation:rise .9s ease forwards;
-}
-.hero-text h1{animation-delay:.1s}
-.hero-text .subtitle{animation-delay:.25s}
-.hero-text .signature{animation-delay:.35s}
-.hero-text .actions{animation-delay:.5s}
-
-@keyframes rise{
-  to{opacity:1;transform:none}
-}
-
-.subtitle{
-  color:var(--muted);
-  font-size:1.1rem;
-  max-width:520px;
-}
-
-.signature{
-  margin-top:14px;
-  font-weight:500;
-}
-
-.actions a{
-  display:inline-block;
-  padding:11px 22px;
-  margin-right:12px;
-  margin-top:18px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  transition:.25s;
-  color:inherit;
-}
-.actions a:hover{
-  border-color:var(--accent);
-  color:var(--accent);
-  transform:translateY(-2px);
-}
-
-/* Portrait */
-.portrait img{
-  width:240px;
-  height:240px;
-  border-radius:18px;
-  object-fit:cover;
-  filter:grayscale(60%);
-  box-shadow:0 24px 54px var(--shadow);
-  transition:.4s;
-}
-.portrait img:hover{
-  filter:grayscale(40%);
-  transform:translateY(-6px);
-}
-
-/* Evolution Timeline */
-.evolution{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:24px;
-  margin-top:36px;
-}
-
-.stage{
-  padding:20px;
-  border:1px solid var(--border);
-  border-radius:14px;
-  background:var(--card);
-  text-align:center;
-  opacity:0;
-  transform:translateY(20px);
-  transition:.6s ease;
-}
-.stage.visible{
-  opacity:1;
-  transform:none;
-}
-
-/* Project Cards */
-.project{
-  display:block;
-  padding:28px;
-  margin-top:34px;
-  border-radius:16px;
-  background:var(--card);
-  border:1px solid var(--border);
-  transition:.4s ease;
-  color:inherit;
-}
-.project:hover{
-  transform:translateY(-6px) scale(1.01);
-  box-shadow:0 26px 64px var(--shadow);
-}
-
-/* Contact */
-.contact{
-  margin-top:130px;
-  padding-top:34px;
-  border-top:1px solid var(--border);
-  color:var(--muted);
-}
-
-:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:4px;
-}
-
-@media(max-width:768px){
-  .hero{grid-template-columns:1fr;gap:52px}
-  .portrait{order:-1}
-  .portrait img{width:180px;height:180px}
-  .spotlight{display:none}
-}
+body { background:#090909; color:#ddd; font-family:Arial; margin:0; }
+.wrap { max-width:1000px; margin:auto; padding:40px 20px; }
+h1,h2 { color:#c8a84b; }
+.section { margin:60px 0; }
+.card { background:#111; padding:20px; border:1px solid #222; border-radius:8px; margin-bottom:20px; }
+.small { color:#888; font-size:14px; }
 </style>
 </head>
 
 <body>
 
-<div class="progress"></div>
-<div class="spotlight"></div>
-<button class="toggle" id="themeToggle">💡</button>
+<div class="wrap">
 
-<div class="container">
+<!-- HERO -->
+<h1>Akshay Sakpal</h1>
+<p><strong>Data Analyst · Junior Data Scientist</strong></p>
+<p class="small">Dublin, Ireland · EU Work Authorised · Available Immediately</p>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1>Akshay Sakpal</h1>
-    <p class="subtitle">
-      Systems-focused Data Analyst & Junior Data Scientist.
-    </p>
-    <p class="signature">
-      I design systems that reduce uncertainty.
-    </p>
-
-    <div class="actions">
-      <a href="./Akshay_Sakpal_CV.pdf" target="_blank">Download CV</a>
-      <a href="#projects">Projects</a>
-      <a href="https://github.com/akkisakpal" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/akshaysakpal07/" target="_blank">LinkedIn</a>
-    </div>
-  </div>
-
-  <div class="portrait">
-    <img src="portrait.jpeg" alt="Akshay Sakpal portrait">
-  </div>
-</section>
-
-<h2>How My Thinking Evolved</h2>
-<div class="evolution">
-  <div class="stage">Engineering Foundations</div>
-  <div class="stage">Curiosity About Signals</div>
-  <div class="stage">Understanding Systems</div>
-  <div class="stage">Designing Reliable Models</div>
-</div>
-
-<h2>What I'm Exploring Now</h2>
+<div class="card">
 <p>
-Data reliability engineering, monitoring & observability systems,
-model interpretability, and scalable anomaly detection frameworks.
+Built a <strong>multivariate anomaly detection system</strong> for JVM memory monitoring,
+designed to detect leak patterns earlier than traditional threshold-based alerts.
 </p>
 
-<h2 id="projects">Selected Work</h2>
-
-<a class="project" href="projects/memory-leak.html">
-<strong>Multivariate Anomaly Detection for Memory Leaks</strong><br>
-From reactive monitoring to predictive anomaly detection in JVM systems.
-</a>
-
-<a class="project" href="projects/etl-pipeline.html">
-<strong>End-to-End ETL Pipeline with Validation</strong><br>
-Robust Python-based pipeline with logging and failure management.
-</a>
-
-<a class="project" href="projects/eda.html">
-<strong>Exploratory Data Analysis Portfolio</strong><br>
-Feature engineering, statistical interpretation, and data storytelling.
-</a>
-
-<div class="contact">
-<p>
-📧 <a href="mailto:akshaybsakpal@gmail.com">AkshaybSakpal@gmail.com</a>
-💼 <a href="https://www.linkedin.com/in/akshaysakpal07/" target="_blank">LinkedIn</a><br>
-🧠 <a href="https://github.com/akkisakpal" target="_blank">GitHub</a>
+<p class="small">
+Tested on a controlled synthetic dataset (10,000 datapoints). Designed as a prototype for real monitoring systems.
 </p>
 </div>
 
+<!-- PROOF -->
+<div class="section">
+<h2>Key Results</h2>
+
+<div class="card">
+<p><strong>~40% earlier detection</strong></p>
+<p class="small">Compared to simple statistical baseline (3-sigma rule)</p>
 </div>
 
-<script>
-/* Dark mode */
-const toggle=document.getElementById("themeToggle");
-toggle.onclick=()=>{
-  const html=document.documentElement;
-  const dark=html.getAttribute("data-theme")==="dark";
-  html.setAttribute("data-theme",dark?"light":"dark");
-  toggle.textContent=dark?"💡":"☀️";
-};
+<div class="card">
+<p><strong>ETL pipeline with validation</strong></p>
+<p class="small">Schema checks · logging · error handling</p>
+</div>
 
-/* Spotlight */
-const s=document.querySelector(".spotlight");
-window.addEventListener("mousemove",e=>{
-  s.style.setProperty("--x",e.clientX+"px");
-  s.style.setProperty("--y",e.clientY+"px");
-});
+<div class="card">
+<p><strong>18+ SQL data quality checks</strong></p>
+<p class="small">Completeness · consistency · freshness</p>
+</div>
 
-/* Parallax */
-window.addEventListener("scroll",()=>{
-  document.body.style.setProperty("--bg-shift",window.scrollY*0.08+"px");
-});
+</div>
 
-/* Scroll reveal */
-const stages=document.querySelectorAll(".stage");
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
-    }
-  });
-},{threshold:.3});
-stages.forEach(stage=>observer.observe(stage));
+<!-- PROJECTS -->
+<div class="section">
+<h2>Projects</h2>
 
-/* Scroll progress */
-const progress=document.querySelector(".progress");
-window.addEventListener("scroll",()=>{
-  const scrolled=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
-  progress.style.width=scrolled+"%";
-});
-</script>
+<div class="card">
+<h3>Flagship: Anomaly Detection</h3>
+
+<p>
+Isolation Forest model using JVM metrics (heap, GC, threads).
+</p>
+
+<p class="small">
+Real-world translation: can integrate with monitoring systems like Prometheus.
+</p>
+
+<p class="small">
+Limitations: tested on synthetic data. Real-world performance depends on noise and system variability.
+</p>
+
+<p>
+<a href="https://github.com/akkisakpal">View Code</a>
+</p>
+</div>
+
+<div class="card">
+<h3>ETL Pipeline</h3>
+
+<p>
+Pipeline with validation and logging at each stage.
+</p>
+
+<p class="small">
+All detected errors are logged and surfaced before load stage.
+</p>
+
+<p>
+<a href="https://github.com/akkisakpal/Python-etl-pipeline">View Code</a>
+</p>
+</div>
+
+<div class="card">
+<h3>SQL Data Quality</h3>
+
+<p>
+18+ automated SQL checks for data validation.
+</p>
+
+<p>
+<a href="https://github.com/akkisakpal/Sql-data-quality-pipeline">View Code</a>
+</p>
+</div>
+
+<div class="card">
+<h3>EDA — Income Dataset</h3>
+
+<p>
+Analysis of 48K+ records identifying key income predictors.
+</p>
+
+<p>
+<a href="https://github.com/akkisakpal">View Code</a>
+</p>
+</div>
+
+</div>
+
+<!-- VALIDATION -->
+<div class="section">
+<h2>Verification</h2>
+
+<div class="card">
+<p><strong>GitHub</strong></p>
+<p class="small">All projects public with commit history</p>
+</div>
+
+<div class="card">
+<p><strong>Education</strong></p>
+<p class="small">MSc Data Analytics — DCU Dublin</p>
+</div>
+
+<div class="card">
+<p><strong>Reproducibility</strong></p>
+<p class="small">All results reproducible using provided code</p>
+</div>
+
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+<h2>Contact</h2>
+
+<p>Email: akshaybsakpal@gmail.com</p>
+<p><a href="https://www.linkedin.com/in/akshaysakpal07/">LinkedIn</a></p>
+<p><a href="https://github.com/akkisakpal">GitHub</a></p>
+
+</div>
+
+</div>
 
 </body>
 </html>
