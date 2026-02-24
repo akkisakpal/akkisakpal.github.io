@@ -6,7 +6,6 @@
 <title>Akshay Sakpal — Data Analyst · Dublin, Ireland</title>
 
 <meta name="description" content="Akshay Sakpal — Data Analyst based in Dublin, Ireland. MSc Data Analytics from DCU. Python, SQL, ML. Stamp 1G Work Permit. Open to full-time roles." />
-<meta name="theme-color" content="#0b0b0c" />
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -30,10 +29,7 @@ body{
   background:var(--bg);
   color:var(--text);
   line-height:1.65;
-  -webkit-font-smoothing:antialiased;
 }
-
-a{text-decoration:none;color:inherit}
 
 section{
   padding:100px 24px;
@@ -51,7 +47,7 @@ h1{
 
 h2{
   font-size:clamp(26px,3vw,34px);
-  margin-bottom:20px;
+  margin-bottom:28px;
   font-weight:700;
 }
 
@@ -61,7 +57,9 @@ h2{
   -webkit-text-fill-color:transparent;
 }
 
-p{color:var(--muted);max-width:620px}
+p{color:var(--muted);max-width:650px}
+
+a{text-decoration:none;color:inherit}
 
 /* NAV */
 nav{
@@ -75,14 +73,14 @@ nav{
   align-items:center;
   padding:0 36px;
   background:rgba(11,11,12,.92);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
   z-index:100;
 }
 
 nav a{
-  font-size:14px;
   margin-left:24px;
+  font-size:14px;
   color:var(--muted);
   transition:.3s;
 }
@@ -95,27 +93,37 @@ nav a:hover{
 .hero{
   min-height:100vh;
   display:grid;
-  grid-template-columns:1fr 190px;
+  grid-template-columns:1fr 170px;
   align-items:center;
-  gap:110px;
+  gap:120px;
   padding-top:140px;
 }
 
-.hero-sub{
-  font-size:18px;
-  margin-bottom:16px;
+.hero-img{
+  text-align:center;
 }
 
-.hero-mini{
-  font-size:14px;
-  color:#6b7280;
-  margin-bottom:30px;
+.hero-img img{
+  max-width:160px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  filter:grayscale(60%) brightness(.95);
+  transition:.4s;
 }
 
-/* Buttons */
+.hero-img img:hover{
+  filter:grayscale(0%) brightness(1);
+}
+
+.location{
+  margin-top:12px;
+  font-size:13px;
+  color:var(--muted);
+}
+
 .btn{
   display:inline-block;
-  padding:11px 22px;
+  padding:10px 20px;
   border-radius:8px;
   font-size:14px;
   font-weight:500;
@@ -128,11 +136,6 @@ nav a:hover{
   color:#000;
 }
 
-.btn-primary:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 25px rgba(201,162,39,.35);
-}
-
 .btn-outline{
   border:1px solid var(--border);
   color:var(--muted);
@@ -143,98 +146,91 @@ nav a:hover{
   color:var(--gold-soft);
 }
 
-/* Social Brand Buttons */
+/* SOCIAL */
 .socials{
-  margin-top:24px;
+  margin-top:22px;
   display:flex;
-  gap:16px;
+  gap:14px;
 }
 
 .github-btn{
   background:#000;
   color:#fff;
   border:1px solid #333;
-  padding:8px 16px;
+  padding:8px 14px;
   border-radius:6px;
   font-size:13px;
-  transition:.3s;
-}
-
-.github-btn:hover{
-  background:#111;
-  transform:translateY(-2px);
 }
 
 .linkedin-btn{
   background:var(--linkedin);
   color:#fff;
-  padding:8px 16px;
+  padding:8px 14px;
   border-radius:6px;
   font-size:13px;
-  transition:.3s;
-}
-
-.linkedin-btn:hover{
-  background:#084c99;
-  transform:translateY(-2px);
-}
-
-/* PORTRAIT */
-.hero-img{
-  display:flex;
-  justify-content:center;
-}
-
-.hero-img img{
-  width:100%;
-  max-width:180px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  filter:grayscale(60%) brightness(.95);
-  transition:.4s ease;
-}
-
-.hero-img img:hover{
-  filter:grayscale(0%) brightness(1);
-  transform:scale(1.02);
-}
-
-.location{
-  margin-top:14px;
-  font-size:13px;
-  text-align:center;
-  color:var(--muted);
 }
 
 /* PROJECTS */
-.projects{
-  display:flex;
-  flex-direction:column;
-  gap:22px;
-}
-
 .project{
   background:var(--card);
   border:1px solid var(--border);
-  padding:32px;
-  border-radius:16px;
+  padding:28px;
+  border-radius:14px;
+  margin-bottom:20px;
   transition:.3s;
 }
 
 .project:hover{
   border-color:var(--gold);
-  transform:translateY(-5px);
+  transform:translateY(-4px);
 }
 
-.project h3{
-  font-size:20px;
-  margin-bottom:14px;
-}
-
-.impact{
-  margin-top:14px;
+.metric{
   font-size:13px;
   color:#71717a;
+  margin-top:8px;
+}
+
+/* SKILLS */
+.skill-tabs{
+  display:flex;
+  gap:12px;
+  margin-bottom:24px;
+}
+
+.skill-tab{
+  padding:8px 16px;
+  border-radius:6px;
+  border:1px solid var(--border);
+  font-size:13px;
+  cursor:pointer;
+  color:var(--muted);
+  transition:.3s;
+}
+
+.skill-tab.active{
+  border-color:var(--gold);
+  color:var(--gold-soft);
+}
+
+.skills-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.skill{
+  padding:8px 14px;
+  border-radius:6px;
+  border:1px solid var(--border);
+  font-size:13px;
+  color:var(--muted);
+  transition:.3s;
+}
+
+.skill:hover{
+  border-color:var(--gold);
+  color:var(--gold-soft);
 }
 
 /* FOOTER */
@@ -247,25 +243,19 @@ footer{
 }
 
 .footer-links{
-  margin-top:14px;
+  margin-top:12px;
 }
 
 .footer-links a{
-  margin:0 14px;
-  font-size:13px;
-  transition:.3s;
+  margin:0 12px;
 }
 
-.footer-links .github-link{
+.footer-links .github{
   color:#fff;
 }
 
-.footer-links .linkedin-link{
+.footer-links .linkedin{
   color:var(--linkedin);
-}
-
-.footer-links a:hover{
-  opacity:.8;
 }
 
 @media(max-width:900px){
@@ -283,26 +273,21 @@ footer{
   <div class="gold" style="font-weight:600;">Akshay Sakpal</div>
   <div>
     <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
-    <a href="./Akshay_Sakpal_CV.pdf" target="_blank">Resume</a>
   </div>
 </nav>
 
 <section class="hero">
   <div>
     <h1><span class="gold">Akshay Sakpal</span><br>Data Analyst</h1>
-
-    <p class="hero-sub">
-      MSc Data Analytics — <span class="gold">Dublin City University</span>.
-      I design systems that make data reliable and decisions defensible.
+    <p>
+      MSc Data Analytics — Dublin City University.  
+      I build reliable data systems and analytical frameworks that prevent costly decision errors.
     </p>
-
-    <p class="hero-mini">
-      Focused on data reliability, monitoring systems, and analytical defensibility.
-    </p>
-
-    <a href="#projects" class="btn btn-primary">View Projects</a>
-    <a href="mailto:akshaybsakpal@gmail.com" class="btn btn-outline">Email Me</a>
+    <br>
+    <a href="#projects" class="btn btn-primary">View Work</a>
+    <a href="mailto:akshaybsakpal@gmail.com" class="btn btn-outline">Email</a>
 
     <div class="socials">
       <a href="https://github.com/akkisakpal" target="_blank" class="github-btn">GitHub</a>
@@ -311,44 +296,50 @@ footer{
   </div>
 
   <div class="hero-img">
-    <div>
-      <img src="./portrait.jpeg" alt="Akshay Sakpal Portrait">
-      <div class="location">
-        Dublin, Ireland · Stamp 1G Work Authorised
-      </div>
-    </div>
+    <img src="./portrait.jpeg" alt="Akshay Sakpal">
+    <div class="location">Dublin · Stamp 1G Work Authorised</div>
   </div>
 </section>
 
 <section id="projects">
-  <h2><span class="gold">Selected Work</span></h2>
+  <h2><span class="gold">Projects</span></h2>
 
-  <div class="projects">
+  <div class="project">
+    <h3>Multivariate Anomaly Detection — JVM Memory Leaks</h3>
+    <p>Predictive monitoring system detecting memory leak behaviour earlier than statistical baselines.</p>
+    <div class="metric">→ ~40% earlier detection vs 3-sigma baseline</div>
+  </div>
 
-    <div class="project">
-      <h3>Multivariate Anomaly Detection — JVM Memory Leaks</h3>
-      <p>Predictive monitoring system detecting JVM memory leak patterns earlier than statistical baselines.</p>
-      <div class="impact">→ Designed for production monitoring teams.</div>
-    </div>
+  <div class="project">
+    <h3>Python ETL Pipeline with Validation</h3>
+    <p>Structured pipeline with schema validation, row reconciliation, and automated error logging.</p>
+    <div class="metric">→ Prevents silent data corruption before reporting layer</div>
+  </div>
 
-    <div class="project">
-      <h3>Python ETL Pipeline with Validation Gates</h3>
-      <p>Structured ETL pipelines with schema validation, reconciliation, and automated error handling.</p>
-      <div class="impact">→ Prevents silent data corruption before analysis.</div>
-    </div>
+  <div class="project">
+    <h3>SQL Data Quality Framework — 18+ Checks</h3>
+    <p>Database-agnostic validation covering completeness, consistency, and freshness.</p>
+    <div class="metric">→ Proactive monitoring over reactive debugging</div>
+  </div>
+</section>
 
-    <div class="project">
-      <h3>SQL Data Quality Framework — 18+ Checks</h3>
-      <p>Database-agnostic SQL validation covering completeness, consistency, and freshness.</p>
-      <div class="impact">→ Moves teams from reactive debugging to proactive monitoring.</div>
-    </div>
+<section id="skills">
+  <h2><span class="gold">Skills</span></h2>
 
+  <div class="skill-tabs">
+    <div class="skill-tab active" data-tab="languages">Languages</div>
+    <div class="skill-tab" data-tab="analysis">Analysis</div>
+    <div class="skill-tab" data-tab="ml">Machine Learning</div>
+    <div class="skill-tab" data-tab="engineering">Engineering</div>
+  </div>
+
+  <div class="skills-grid" id="skills-content">
   </div>
 </section>
 
 <section id="contact">
   <h2><span class="gold">Contact</span></h2>
-  <p>Based in Dublin, Ireland · Stamp 1G Work Authorisation. Open to full-time roles.</p>
+  <p>Open to full-time Data Analyst or Data Engineer roles in Ireland.</p>
   <br>
   <a href="mailto:akshaybsakpal@gmail.com" class="btn btn-primary">
     akshaybsakpal@gmail.com
@@ -358,10 +349,42 @@ footer{
 <footer>
   © 2026 Akshay Sakpal · Dublin, Ireland
   <div class="footer-links">
-    <a href="https://github.com/akkisakpal" target="_blank" class="github-link">GitHub</a>
-    <a href="https://www.linkedin.com/in/akshaysakpal07/" target="_blank" class="linkedin-link">LinkedIn</a>
+    <a href="https://github.com/akkisakpal" class="github">GitHub</a>
+    <a href="https://www.linkedin.com/in/akshaysakpal07/" class="linkedin">LinkedIn</a>
   </div>
 </footer>
+
+<script>
+const skillsData = {
+  languages:["Python","SQL","Bash"],
+  analysis:["Pandas","NumPy","EDA","Statistical Testing","Matplotlib"],
+  ml:["Scikit-learn","Isolation Forest","LSTM","DBSCAN","Time Series"],
+  engineering:["ETL Design","Data Validation","PostgreSQL","Git","Linux"]
+};
+
+const tabs = document.querySelectorAll('.skill-tab');
+const content = document.getElementById('skills-content');
+
+function loadSkills(category){
+  content.innerHTML="";
+  skillsData[category].forEach(skill=>{
+    const span=document.createElement('div');
+    span.className="skill";
+    span.innerText=skill;
+    content.appendChild(span);
+  });
+}
+
+tabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    tabs.forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    loadSkills(tab.dataset.tab);
+  });
+});
+
+loadSkills("languages");
+</script>
 
 </body>
 </html>
