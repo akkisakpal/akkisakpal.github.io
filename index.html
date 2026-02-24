@@ -1,168 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshay Sakpal — Data Analyst</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Akshay Sakpal — Data Analyst based in Dublin, Ireland. MSc Data Analytics from DCU. Python, SQL, ML. Stamp 1G Work Permit. Open to full-time roles." />
+  <meta name="theme-color" content="#09090b" />
+  <meta property="og:title" content="Akshay Sakpal — Data Analyst · Dublin, Ireland" />
+  <meta property="og:description" content="MSc Data Analytics (DCU). Python, SQL, ML projects with public code. Stamp 1G authorised. Open to full-time roles in Ireland." />
+  <meta property="og:type" content="website" />
+  <title>Akshay Sakpal — Data Analyst · Dublin, Ireland</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0a'/><text x='8' y='23' font-size='18' font-family='Georgia,serif' fill='%23e0e0e0'>A</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-<style>
-body {
-  margin:0;
-  font-family: system-ui;
-  background:#0a0a0a;
-  color:#eaeaea;
-}
+  <style>
+    :root {
+      --bg:#09090b;--bg2:#0f0f11;--card:#131316;--card-h:#18181b;
+      --border:#1c1c20;--border2:#27272a;
+      --t1:#fafafa;--t2:#a1a1aa;--t3:#52525b;
+      --green:#22c55e;--green-bg:rgba(34,197,94,.08);--green-br:rgba(34,197,94,.2);
+      --font:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+      --mono:'JetBrains Mono','SF Mono',monospace;
+      --ease:cubic-bezier(.25,.46,.45,.94);
+      --max:1120px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--t1);font-family:var(--font);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ::selection{background:#3b82f6;color:#fff}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:4px}
 
-/* Layout */
-.container {
-  max-width:1000px;
-  margin:auto;
-  padding:40px 20px;
-}
+    /* NAV */
+    .n{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,48px);transition:all .3s}
+    .n.s{background:rgba(9,9,11,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .n-logo{font-weight:600;font-size:15px;letter-spacing:-.02em}
+    .n-links{display:flex;align-items:center;gap:28px}
+    .n-links a{font-size:13px;color:var(--t2);transition:color .2s}
+    .n-links a:hover{color:var(--t1)}
+    .n-cta{font-size:12px!important;font-weight:500!important;padding:7px 16px!important;background:var(--t1)!important;color:var(--bg)!important;border-radius:6px!important;transition:opacity .2s!important}
+    .n-cta:hover{opacity:.85!important}
+    .n-mob{display:none;background:0;border:0;color:var(--t1);cursor:pointer;padding:4px}
 
-/* Hero */
-.hero h1 {
-  font-size:48px;
-  margin-bottom:10px;
-}
+    /* HERO */
+    .hero{min-height:100vh;display:flex;align-items:center;padding:80px clamp(20px,4vw,48px) 60px;max-width:var(--max);margin:0 auto}
+    .hero-g{display:grid;grid-template-columns:1fr 340px;gap:72px;align-items:center;width:100%}
+    .hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--green);padding:6px 14px;background:var(--green-bg);border:1px solid var(--green-br);border-radius:100px}
+    .hero-stamp{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--t2);padding:6px 14px;background:var(--card);border:1px solid var(--border);border-radius:100px;font-family:var(--mono)}
+    .hero-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2.5s ease infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+    .hero h1{font-size:clamp(40px,5.5vw,64px);font-weight:700;line-height:1.05;letter-spacing:-.035em;margin-bottom:20px}
+    .hero h1 em{font-style:normal;color:var(--t2);font-weight:400}
+    .hero-p{font-size:17px;line-height:1.75;color:var(--t2);max-width:460px;margin-bottom:32px}
+    .hero-p strong{color:var(--t1);font-weight:500}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;padding:10px 22px;border-radius:8px;transition:all .2s var(--ease);cursor:pointer;border:0;font-family:var(--font)}
+    .btn-p{background:var(--t1);color:var(--bg)}
+    .btn-p:hover{opacity:.85;transform:translateY(-1px)}
+    .btn-s{background:0;color:var(--t2);border:1px solid var(--border2)}
+    .btn-s:hover{color:var(--t1);border-color:var(--t3)}
 
-.hero p {
-  color:#aaa;
-  max-width:600px;
-}
+    /* PORTRAIT */
+    .hero-img{position:relative}
+    .hero-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--border);background:var(--card)}
+    .hero-img-cap{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(to top,rgba(9,9,11,.92),transparent);border-radius:0 0 12px 12px}
+    .hero-img-cap p{font-size:12px;color:var(--t3);font-family:var(--mono)}
+    .hero-img-placeholder{width:100%;aspect-ratio:4/5;border-radius:12px;border:1px solid var(--border);background:var(--card);display:flex;align-items:center;justify-content:center;font-size:64px;color:var(--border2)}
 
-.badge {
-  color:#4ade80;
-  font-size:12px;
-  margin-bottom:10px;
-}
+    /* STATS */
+    .stats-w{padding:0 clamp(20px,4vw,48px);margin-top:-36px;position:relative;z-index:2;max-width:calc(var(--max) + 96px);margin-left:auto;margin-right:auto}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .st-i{padding:22px 24px;border-right:1px solid var(--border);background:var(--card)}
+    .st-i:last-child{border-right:0}
+    .st-n{font-size:26px;font-weight:700;letter-spacing:-.02em;margin-bottom:2px}
+    .st-l{font-size:13px;color:var(--t2);line-height:1.45}
+    .st-s{font-family:var(--mono);font-size:10px;color:var(--t3);margin-top:3px}
 
-/* Section */
-.section {
-  margin-top:80px;
-}
+    /* SECTIONS */
+    .sec{padding:96px clamp(20px,4vw,48px);max-width:var(--max);margin:0 auto;border-top:1px solid var(--border)}
+    .sec-label{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-bottom:14px}
+    .sec-title{font-size:clamp(26px,3.2vw,38px);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px}
+    .sec-title span{color:var(--t2);font-weight:400}
+    .sec-sub{font-size:15px;color:var(--t2);max-width:540px;line-height:1.7;margin-bottom:44px}
 
-.section h2 {
-  margin-bottom:20px;
-}
+    /* VALUE CARDS */
+    .val-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:12px;overflow:hidden}
+    .val-c{background:var(--card);padding:30px 26px;transition:background .3s}
+    .val-c:hover{background:var(--card-h)}
+    .val-ic{width:38px;height:38px;border-radius:10px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:17px}
+    .val-c h3{font-size:15px;font-weight:600;margin-bottom:8px}
+    .val-c p{font-size:13px;color:var(--t2);line-height:1.65}
 
-/* Cards */
-.card {
-  background:#111;
-  padding:20px;
-  border-radius:8px;
-  margin-bottom:20px;
-}
+    /* SKILLS */
+    .sk-g{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+    .sk-grp{margin-bottom:26px}
+    .sk-grp-t{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+    .sk-tags{display:flex;flex-wrap:wrap;gap:6px}
+    .sk{font-family:var(--mono);font-size:11px;padding:5px 11px;border-radius:6px;background:var(--card);border:1px solid var(--border);color:var(--t2)}
+    .sk.hi{color:var(--t1);border-color:var(--border2)}
+    .edu{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .edu-r{padding:18px 22px;border-bottom:1px solid var(--border);display:flex;gap:14px;align-items:flex-start}
+    .edu-r:last-child{border-bottom:0}
+    .edu-dot{width:8px;height:8px;border-radius:50%;background:var(--border2);margin-top:6px;flex-shrink:0}
+    .edu-dot.now{background:var(--green)}
+    .edu-d h4{font-size:14px;font-weight:600;margin-bottom:1px}
+    .edu-d p{font-size:13px;color:var(--t2)}
+    .edu-d .m{font-size:12px;color:var(--t3);font-family:var(--mono)}
+    .work-box{margin-top:14px;padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+    .work-box-h{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+    .work-box-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+    .work-box-l{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--t3)}
+    .work-box p{font-size:14px;color:var(--t2)}
+    .work-box strong{color:var(--t1);font-weight:500}
 
-/* Buttons */
-.btn {
-  display:inline-block;
-  padding:10px 20px;
-  background:#c8a84b;
-  color:black;
-  text-decoration:none;
-  margin-top:20px;
-}
+    /* PROJECTS */
+    .proj-list{display:flex;flex-direction:column;gap:14px}
+    .proj{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .3s}
+    .proj:hover{border-color:var(--border2)}
+    .proj-body{padding:30px}
+    .proj-type{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);padding:4px 10px;border:1px solid var(--border);border-radius:4px;display:inline-block;margin-bottom:14px}
+    .proj h3{font-size:19px;font-weight:600;letter-spacing:-.015em;margin-bottom:12px}
+    .proj-prob{font-size:13.5px;color:var(--t2);line-height:1.7;padding:14px 16px;background:var(--bg);border-left:2px solid var(--border2);border-radius:0 8px 8px 0;margin-bottom:18px}
+    .proj-prob strong{color:var(--t1);font-weight:500}
+    .proj-met{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+    .pm{padding:12px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;min-width:100px}
+    .pm-n{font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:1px}
+    .pm-l{font-size:11px;color:var(--t2);line-height:1.4}
+    .pm-s{font-family:var(--mono);font-size:9px;color:var(--t3);margin-top:3px}
+    .proj-tech{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:18px}
+    .proj-tech span{font-family:var(--mono);font-size:10px;padding:3px 9px;border-radius:4px;background:var(--bg);border:1px solid var(--border);color:var(--t3)}
+    .proj-links{display:flex;gap:8px;flex-wrap:wrap}
+    .proj-link{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--t2);padding:7px 14px;border:1px solid var(--border);border-radius:6px;transition:all .2s}
+    .proj-link:hover{color:var(--t1);border-color:var(--border2);background:var(--bg2)}
+    .proj-link svg{flex-shrink:0}
+    .gh-icon{width:14px;height:14px;vertical-align:middle}
 
-/* Links */
-a { color:#c8a84b; }
+    /* CONTACT */
+    .ct-g{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    .ct-avail{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:var(--green-bg);border:1px solid var(--green-br);border-radius:10px;margin-bottom:22px}
+    .ct-avail p{font-size:14px;color:var(--t2);line-height:1.6}
+    .ct-avail strong{color:var(--green);font-weight:500}
+    .ct-text{font-size:15px;color:var(--t2);line-height:1.75;margin-bottom:26px}
+    .ct-text strong{color:var(--t1);font-weight:500}
+    .ct-links{display:flex;flex-direction:column;gap:8px}
+    .ct-link{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:10px;transition:all .25s var(--ease)}
+    .ct-link:hover{border-color:var(--border2);background:var(--card-h);transform:translateX(3px)}
+    .ct-ic{width:36px;height:36px;border-radius:9px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+    .ct-info{flex:1}
+    .ct-label{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);margin-bottom:1px}
+    .ct-val{font-size:13.5px;color:var(--t1)}
+    .ct-arr{color:var(--t3);font-size:13px;transition:all .2s}
+    .ct-link:hover .ct-arr{color:var(--t2);transform:translate(2px,-2px)}
 
-</style>
+    /* FOOTER */
+    .ft{border-top:1px solid var(--border);padding:22px clamp(20px,4vw,48px);display:flex;justify-content:space-between;align-items:center;max-width:calc(var(--max) + 96px);margin:0 auto}
+    .ft-l{font-size:13px;color:var(--t3)}
+    .ft-r{display:flex;gap:20px}
+    .ft-r a{font-size:13px;color:var(--t3);transition:color .2s}
+    .ft-r a:hover{color:var(--t2)}
+
+    /* REVEAL */
+    .rv{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+    .rv.v{opacity:1;transform:none}
+    .d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}
+
+    /* MOBILE MENU */
+    .mob-menu{position:fixed;inset:0;top:56px;background:rgba(9,9,11,.97);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+    .mob-menu a{font-size:18px;color:var(--t2)}
+    .mob-menu.hidden{display:none}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .n-links{display:none!important}
+      .n-mob{display:block}
+      .hero-g{grid-template-columns:1fr;gap:36px}
+      .hero-img{order:-1;max-width:280px}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .st-i:nth-child(2){border-right:0}
+      .val-g{grid-template-columns:1fr}
+      .sk-g{grid-template-columns:1fr;gap:28px}
+      .ct-g{grid-template-columns:1fr;gap:36px}
+      .ft{flex-direction:column;gap:10px;text-align:center}
+      .ft-r{justify-content:center;flex-wrap:wrap}
+    }
+    @media(max-width:640px){
+      .stats{grid-template-columns:1fr}
+      .st-i{border-right:0;border-bottom:1px solid var(--border)}
+      .st-i:last-child{border-bottom:0}
+      .proj-met{flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .rv{opacity:1;transform:none;transition:none}
+      .hero-dot{animation:none}
+    }
+
+    #root{display:none}
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+  <!-- NAV -->
+  <nav class="n" id="nav">
+    <div class="n-logo">Akshay Sakpal</div>
+    <div class="n-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="./Akshay_Sakpal_CV.pdf" target="_blank" rel="noopener" class="n-cta">Resume</a>
+    </div>
+    <button class="n-mob" id="mobBtn" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="3" y1="6" x2="19" y2="6"/>
+        <line x1="3" y1="11" x2="19" y2="11"/>
+        <line x1="3" y1="16" x2="19" y2="16"/>
+      </svg>
+    </button>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-<div class="badge">Open to full-time roles · Ireland</div>
+  <!-- MOBILE MENU -->
+  <div class="mob-menu hidden" id="mobMenu">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
 
-<h1>Akshay Sakpal</h1>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-g">
+      <div>
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <span class="hero-dot"></span>
+            Available for full-time roles
+          </div>
+          <div class="hero-stamp">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1"/><path d="M3.5 6l2 2 3-3" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Stamp 1G · Ireland
+          </div>
+        </div>
+        <h1>Akshay Sakpal<br><em>Data Analyst</em></h1>
+        <p class="hero-p">
+          MSc Data Analytics from <strong>Dublin City University</strong>.
+          I build systems that make data <strong>reliable</strong> and
+          decisions <strong>defensible</strong>. Based in Dublin, Ireland.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-p">View my work</a>
+          <a href="mailto:akshaybsakpal@gmail.com?subject=Data Analyst Role — Let's Talk" class="btn btn-s">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="./portrait.jpeg" alt="Akshay Sakpal — Data Analyst, Dublin Ireland" onerror="this.parentElement.innerHTML='<div class=hero-img-placeholder>AS</div>'" />
+        <div class="hero-img-cap">
+          <p>Dublin, Ireland · Stamp 1G Authorised</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>
-Data Analyst focused on building reliable data systems and extracting actionable insights from real-world datasets.
-</p>
+  <!-- STATS -->
+  <div class="stats-w">
+    <div class="stats">
+      <div class="st-i">
+        <div class="st-n">MSc</div>
+        <div class="st-l">Data Analytics — DCU, Dublin</div>
+        <div class="st-s">Graduated 2024</div>
+      </div>
+      <div class="st-i">
+        <div class="st-n">~40%</div>
+        <div class="st-l">Earlier leak detection vs baseline</div>
+        <div class="st-s">MSc thesis · synthetic JVM data</div>
+      </div>
+      <div class="st-i">
+        <div class="st-n">18+</div>
+        <div class="st-l">SQL quality checks built</div>
+        <div class="st-s">Completeness · consistency · freshness</div>
+      </div>
+      <div class="st-i">
+        <div class="st-n">Stamp 1G</div>
+        <div class="st-l">Full work authorisation — Ireland</div>
+        <div class="st-s">No sponsorship needed · immediate start</div>
+      </div>
+    </div>
+  </div>
 
-<p>
-Strong in <b>Python, SQL, and ETL pipelines</b> with hands-on experience in anomaly detection and production-grade data workflows.
-</p>
+  <!-- ABOUT -->
+  <section class="sec" id="about">
+    <div class="sec-label rv">What I do</div>
+    <h2 class="sec-title rv d1">I solve <span>data reliability problems</span></h2>
+    <p class="sec-sub rv d2">Not just analysis — I focus on catching data problems before they reach decision-makers.</p>
+    <div class="val-g rv d3">
+      <div class="val-c">
+        <div class="val-ic">📊</div>
+        <h3>Anomaly Detection</h3>
+        <p>Multivariate anomaly detector for JVM memory leaks — catches issues before they escalate into outages. The value is prevention, not just detection.</p>
+      </div>
+      <div class="val-c">
+        <div class="val-ic">🔧</div>
+        <h3>Data Pipelines</h3>
+        <p>ETL pipelines with validation gates at every stage — schema checks, row-count reconciliation, null-rate thresholds. Bad data gets caught, not passed along.</p>
+      </div>
+      <div class="val-c">
+        <div class="val-ic">✓</div>
+        <h3>Data Quality</h3>
+        <p>SQL-based quality checks across completeness, consistency, and freshness dimensions. 18+ automated checks that run on any relational database.</p>
+      </div>
+    </div>
+  </section>
 
-<a href="#projects" class="btn">View Projects</a>
-</section>
+  <!-- SKILLS -->
+  <section class="sec" id="skills">
+    <div class="sec-label rv">Skills &amp; Education</div>
+    <h2 class="sec-title rv d1">What I <span>work with</span></h2>
+    <p class="sec-sub rv d2">Highlighted tags are tools I've actively used in projects.</p>
+    <div class="sk-g">
+      <div class="rv d2">
+        <div class="sk-grp">
+          <div class="sk-grp-t">Languages</div>
+          <div class="sk-tags">
+            <span class="sk hi">Python</span>
+            <span class="sk hi">SQL</span>
+            <span class="sk">Bash</span>
+          </div>
+        </div>
+        <div class="sk-grp">
+          <div class="sk-grp-t">Data &amp; Analysis</div>
+          <div class="sk-tags">
+            <span class="sk hi">Pandas</span>
+            <span class="sk hi">NumPy</span>
+            <span class="sk">Matplotlib</span>
+            <span class="sk">Seaborn</span>
+            <span class="sk">EDA</span>
+            <span class="sk">Statistical Testing</span>
+          </div>
+        </div>
+        <div class="sk-grp">
+          <div class="sk-grp-t">Machine Learning</div>
+          <div class="sk-tags">
+            <span class="sk hi">Scikit-learn</span>
+            <span class="sk">Isolation Forest</span>
+            <span class="sk">LSTM</span>
+            <span class="sk">DBSCAN</span>
+            <span class="sk">CNN Autoencoder</span>
+            <span class="sk">Time Series</span>
+            <span class="sk">Feature Engineering</span>
+          </div>
+        </div>
+        <div class="sk-grp">
+          <div class="sk-grp-t">Engineering &amp; Tools</div>
+          <div class="sk-tags">
+            <span class="sk hi">ETL Design</span>
+            <span class="sk hi">Data Validation</span>
+            <span class="sk hi">PostgreSQL</span>
+            <span class="sk">MySQL</span>
+            <span class="sk">Git / GitHub</span>
+            <span class="sk">Jupyter</span>
+            <span class="sk">VS Code</span>
+            <span class="sk">Linux</span>
+          </div>
+        </div>
+        <div class="sk-grp">
+          <div class="sk-grp-t">Exploring</div>
+          <div class="sk-tags">
+            <span class="sk">Azure (basics)</span>
+            <span class="sk">Prometheus</span>
+            <span class="sk">Grafana</span>
+          </div>
+        </div>
+      </div>
+      <div class="rv d3">
+        <div class="edu">
+          <div class="edu-r">
+            <div class="edu-dot now"></div>
+            <div class="edu-d">
+              <h4>MSc Data Analytics</h4>
+              <p>Dublin City University (DCU)</p>
+              <p class="m">2023 – 2024 · Dublin, Ireland</p>
+            </div>
+          </div>
+          <div class="edu-r">
+            <div class="edu-dot"></div>
+            <div class="edu-d">
+              <h4>B.E. Information Technology</h4>
+              <p>K.C. College, Mumbai University</p>
+              <p class="m">2019 – 2022 · Mumbai, India</p>
+            </div>
+          </div>
+          <div class="edu-r">
+            <div class="edu-dot"></div>
+            <div class="edu-d">
+              <h4>B.C.A. Computer Applications</h4>
+              <p>Bharati Vidyapeeth</p>
+              <p class="m">Mumbai, India</p>
+            </div>
+          </div>
+        </div>
+        <div class="work-box">
+          <div class="work-box-h">
+            <span class="work-box-dot"></span>
+            <span class="work-box-l">Work Eligibility</span>
+          </div>
+          <p><strong>Stamp 1G Work Permit</strong> — Ireland. Full authorisation to work. Available immediately. No visa sponsorship required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section">
-<h2>Projects</h2>
+  <!-- PROJECTS -->
+  <section class="sec" id="projects">
+    <div class="sec-label rv">Projects</div>
+    <h2 class="sec-title rv d1">Built with real data, <span>open on GitHub</span></h2>
+    <p class="sec-sub rv d2">Every project links to its source code. Results are from specific datasets and methodologies described in each repo.</p>
 
-<div class="card">
-<h3>Memory Leak Detection System</h3>
-<p>
-Built a multivariate anomaly detection system using Isolation Forest on JVM metrics.
-</p>
-<ul>
-<li>Detected anomalies ~40% earlier</li>
-<li>Reduced false positives to &lt;5%</li>
-<li>Used Python, Pandas, Scikit-learn</li>
-</ul>
-<a href="https://github.com/akkisakpal">View Code</a>
-</div>
+    <div class="proj-list">
 
-<div class="card">
-<h3>ETL Pipeline with Validation</h3>
-<p>
-Designed a production-ready ETL pipeline with validation and logging.
-</p>
-<ul>
-<li>100% data validation before load</li>
-<li>Zero silent failures</li>
-<li>PostgreSQL + Python</li>
-</ul>
-<a href="https://github.com/akkisakpal/Python-etl-pipeline">View Code</a>
-</div>
+      <!-- P1 -->
+      <article class="proj rv">
+        <div class="proj-body">
+          <div class="proj-type">MSc Thesis · Anomaly Detection</div>
+          <h3>Multivariate Anomaly Detection for JVM Memory Leaks</h3>
+          <div class="proj-prob">
+            <strong>Problem:</strong> Teams react to memory-related outages after they happen — costing downtime and user impact. This system shifts from reactive to predictive monitoring.
+          </div>
+          <div class="proj-met">
+            <div class="pm">
+              <div class="pm-n">~40%</div>
+              <div class="pm-l">Earlier detection vs 3-sigma baseline</div>
+              <div class="pm-s">10K synthetic JVM rows</div>
+            </div>
+            <div class="pm">
+              <div class="pm-n">&lt;5%</div>
+              <div class="pm-l">False positive rate</div>
+              <div class="pm-s">Isolation Forest · contamination=0.05</div>
+            </div>
+            <div class="pm">
+              <div class="pm-n">3</div>
+              <div class="pm-l">JVM signals monitored simultaneously</div>
+              <div class="pm-s">Heap · GC freq · thread count</div>
+            </div>
+          </div>
+          <div class="proj-tech">
+            <span>Python</span><span>Scikit-learn</span><span>Isolation Forest</span>
+            <span>Pandas</span><span>Matplotlib</span><span>Time Series</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/akkisakpal/Memory-Leak-Detection" target="_blank" rel="noopener" class="proj-link">
+              <svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.37.6.11.82-.26.82-.57v-2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View source code
+            </a>
+          </div>
+        </div>
+      </article>
 
-<div class="card">
-<h3>EDA Portfolio</h3>
-<p>
-Exploratory data analysis projects focusing on business insights and storytelling.
-</p>
-<ul>
-<li>Multi-domain datasets</li>
-<li>Clear stakeholder insights</li>
-<li>Data visualization focus</li>
-</ul>
-<a href="https://github.com/akkisakpal">View Code</a>
-</div>
+      <!-- P2 -->
+      <article class="proj rv d1">
+        <div class="proj-body">
+          <div class="proj-type">Data Engineering</div>
+          <h3>Python ETL Pipeline with Validation &amp; Logging</h3>
+          <div class="proj-prob">
+            <strong>Problem:</strong> Analysts receiving silently wrong data — malformed rows, missing fields, schema drift — leading to broken reports and bad decisions.
+          </div>
+          <div class="proj-met">
+            <div class="pm">
+              <div class="pm-n">3</div>
+              <div class="pm-l">Validation gates before data reaches destination</div>
+              <div class="pm-s">Schema · row count · null-rate</div>
+            </div>
+            <div class="pm">
+              <div class="pm-n">Every stage</div>
+              <div class="pm-l">Extract, Transform, Load — all with error handling</div>
+              <div class="pm-s">Structured logging at each step</div>
+            </div>
+          </div>
+          <div class="proj-tech">
+            <span>Python</span><span>SQL</span><span>Pandas</span>
+            <span>Data Validation</span><span>Logging</span><span>PostgreSQL</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/akkisakpal/Python-etl-pipeline" target="_blank" rel="noopener" class="proj-link">
+              <svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.37.6.11.82-.26.82-.57v-2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View source code
+            </a>
+          </div>
+        </div>
+      </article>
 
-</section>
+      <!-- P3 -->
+      <article class="proj rv d2">
+        <div class="proj-body">
+          <div class="proj-type">Data Quality · SQL</div>
+          <h3>SQL Data Quality Pipeline — 18+ Automated Checks</h3>
+          <div class="proj-prob">
+            <strong>Problem:</strong> Dashboards and analysts trust data by default. Without systematic checks, stale or inconsistent records flow into reports — creating wrong decisions.
+          </div>
+          <div class="proj-met">
+            <div class="pm">
+              <div class="pm-n">18+</div>
+              <div class="pm-l">Automated SQL quality checks</div>
+              <div class="pm-s">3 DQ dimensions covered</div>
+            </div>
+            <div class="pm">
+              <div class="pm-n">DB-agnostic</div>
+              <div class="pm-l">Works on any standard relational database</div>
+              <div class="pm-s">PostgreSQL · MySQL · SQLite</div>
+            </div>
+          </div>
+          <div class="proj-tech">
+            <span>SQL</span><span>PostgreSQL</span><span>Data Quality</span>
+            <span>Completeness</span><span>Consistency</span><span>Freshness</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/akkisakpal/Sql-data-quality-pipeline" target="_blank" rel="noopener" class="proj-link">
+              <svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.37.6.11.82-.26.82-.57v-2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View source code
+            </a>
+          </div>
+        </div>
+      </article>
 
-<!-- SKILLS -->
-<section class="section">
-<h2>Skills</h2>
+      <!-- P4 -->
+      <article class="proj rv d3">
+        <div class="proj-body">
+          <div class="proj-type">Data Analysis · EDA</div>
+          <h3>Exploratory Data Analysis — UCI Adult Income Dataset</h3>
+          <div class="proj-prob">
+            <strong>Problem:</strong> Raw demographic data doesn't self-explain patterns. This analysis identifies which features most strongly predict income level — useful for targeting and feature selection.
+          </div>
+          <div class="proj-met">
+            <div class="pm">
+              <div class="pm-n">48,842</div>
+              <div class="pm-l">Records analysed across 14 features</div>
+              <div class="pm-s">UCI public benchmark dataset</div>
+            </div>
+            <div class="pm">
+              <div class="pm-n">Top 3</div>
+              <div class="pm-l">Predictive features identified</div>
+              <div class="pm-s">Age · education · hours/week</div>
+            </div>
+          </div>
+          <div class="proj-tech">
+            <span>Pandas</span><span>Matplotlib</span><span>Seaborn</span>
+            <span>NumPy</span><span>SciPy</span><span>Feature Engineering</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/akkisakpal" target="_blank" rel="noopener" class="proj-link">
+              <svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.37.6.11.82-.26.82-.57v-2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </article>
 
-<p>
-<b>Languages:</b> Python, SQL  
-<br>
-<b>Data:</b> Pandas, NumPy  
-<br>
-<b>ML:</b> Scikit-learn, Anomaly Detection  
-<br>
-<b>Tools:</b> Git, PostgreSQL, Jupyter
-</p>
+    </div>
+  </section>
 
-</section>
+  <!-- CONTACT -->
+  <section class="sec" id="contact">
+    <div class="ct-g">
+      <div>
+        <div class="sec-label rv">Contact</div>
+        <h2 class="sec-title rv d1" style="margin-bottom:22px">
+          Let's talk about<br><span>your data challenges</span>
+        </h2>
+        <div class="ct-avail rv d2">
+          <span class="hero-dot" style="margin-top:5px;flex-shrink:0"></span>
+          <p><strong>Available immediately</strong> for full-time roles in Dublin — remote or hybrid. Stamp 1G work permit holder. No visa sponsorship required.</p>
+        </div>
+        <p class="ct-text rv d2">
+          Looking for <strong>Data Analyst</strong>, <strong>Junior Data Scientist</strong>,
+          or <strong>Data Engineer</strong> roles where data quality and reliability matter.
+          Open to interviews this week.
+        </p>
+        <a href="mailto:akshaybsakpal@gmail.com?subject=Data Analyst Role — Let's Talk" class="btn btn-p rv d3">Send me an email →</a>
+      </div>
+      <div class="ct-links rv d2">
+        <a href="mailto:akshaybsakpal@gmail.com" class="ct-link">
+          <div class="ct-ic">✉</div>
+          <div class="ct-info">
+            <div class="ct-label">Email</div>
+            <div class="ct-val">akshaybsakpal@gmail.com</div>
+          </div>
+          <span class="ct-arr">↗</span>
+        </a>
+        <a href="https://www.linkedin.com/in/akshaysakpal07/" target="_blank" rel="noopener" class="ct-link">
+          <div class="ct-ic">in</div>
+          <div class="ct-info">
+            <div class="ct-label">LinkedIn</div>
+            <div class="ct-val">linkedin.com/in/akshaysakpal07</div>
+          </div>
+          <span class="ct-arr">↗</span>
+        </a>
+        <a href="https://github.com/akkisakpal" target="_blank" rel="noopener" class="ct-link">
+          <div class="ct-ic">
+            <svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.37.6.11.82-.26.82-.57v-2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </div>
+          <div class="ct-info">
+            <div class="ct-label">GitHub</div>
+            <div class="ct-val">github.com/akkisakpal</div>
+          </div>
+          <span class="ct-arr">↗</span>
+        </a>
+        <a href="./Akshay_Sakpal_CV.pdf" target="_blank" rel="noopener" class="ct-link">
+          <div class="ct-ic">📄</div>
+          <div class="ct-info">
+            <div class="ct-label">Resume</div>
+            <div class="ct-val">Download PDF</div>
+          </div>
+          <span class="ct-arr">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<section class="section">
-<h2>Contact</h2>
+  <!-- FOOTER -->
+  <footer class="ft">
+    <span class="ft-l">© 2025 Akshay Sakpal · Dublin, Ireland · Stamp 1G</span>
+    <nav class="ft-r">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </footer>
 
-<p>Email: <a href="mailto:akshaybsakpal@gmail.com">akshaybsakpal@gmail.com</a></p>
-<p>LinkedIn: <a href="https://linkedin.com/in/akshaysakpal07">Profile</a></p>
-<p>GitHub: <a href="https://github.com/akkisakpal">Repositories</a></p>
+  <!-- Hidden React root for Vite build -->
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 
-</section>
+  <script>
+    // Sticky nav on scroll
+    window.addEventListener('scroll', function() {
+      document.getElementById('nav').classList.toggle('s', window.scrollY > 30);
+    }, { passive: true });
 
-</div>
+    // Mobile menu toggle
+    var mobBtn = document.getElementById('mobBtn');
+    var mobMenu = document.getElementById('mobMenu');
+    mobBtn.addEventListener('click', function() {
+      mobMenu.classList.toggle('hidden');
+      var open = !mobMenu.classList.contains('hidden');
+      mobBtn.innerHTML = open
+        ? '<svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="5" x2="17" y2="17"/><line x1="17" y1="5" x2="5" y2="17"/></svg>'
+        : '<svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="19" y2="6"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="16" x2="19" y2="16"/></svg>';
+    });
+    mobMenu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        mobMenu.classList.add('hidden');
+        mobBtn.innerHTML = '<svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="19" y2="6"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="16" x2="19" y2="16"/></svg>';
+      });
+    });
+
+    // Reveal elements on scroll
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) entry.target.classList.add('v');
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.rv').forEach(function(el) { observer.observe(el); });
+  </script>
 
 </body>
 </html>
