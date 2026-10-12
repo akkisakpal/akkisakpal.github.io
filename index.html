@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Akshay Sakpal — Data Analyst · Dublin, Ireland</title>
 
-<meta name="description" content="Akshay Sakpal — Data Analyst based in Dublin, Ireland. MSc Data Analytics from DCU. Python, SQL, ML. Stamp 1G Work Permit. Open to full-time roles." />
+<meta name="description" content="Akshay Sakpal — Data Analyst based in Dublin, Ireland. MSc Data Analytics from DCU. Python, SQL, Power BI, ML, AI agents. Stamp 1G Work Permit. Open to full-time roles." />
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -24,6 +24,8 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
+html{scroll-behavior:smooth}
+
 body{
   font-family:'Inter',sans-serif;
   background:var(--bg);
@@ -35,6 +37,7 @@ section{
   padding:100px 24px;
   max-width:var(--max);
   margin:auto;
+  scroll-margin-top:40px;
 }
 
 h1{
@@ -50,6 +53,8 @@ h2{
   margin-bottom:28px;
   font-weight:700;
 }
+
+h3{margin-bottom:6px}
 
 .gold{
   background:linear-gradient(90deg,var(--gold),var(--gold-soft));
@@ -170,7 +175,7 @@ nav a:hover{
   font-size:13px;
 }
 
-/* PROJECTS */
+/* PROJECTS / CARDS */
 .project{
   background:var(--card);
   border:1px solid var(--border);
@@ -191,9 +196,41 @@ nav a:hover{
   margin-top:8px;
 }
 
+.project-link{
+  display:inline-block;
+  margin-top:12px;
+  font-size:13px;
+  color:var(--gold-soft);
+  transition:.3s;
+}
+
+.project-link:hover{
+  color:var(--gold);
+}
+
+.meta{
+  font-size:13px;
+  color:#71717a;
+  margin-bottom:8px;
+}
+
+.badge{
+  display:inline-block;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:#000;
+  background:linear-gradient(90deg,var(--gold),var(--gold-soft));
+  padding:2px 8px;
+  border-radius:4px;
+  margin-bottom:10px;
+}
+
 /* SKILLS */
 .skill-tabs{
   display:flex;
+  flex-wrap:wrap;
   gap:12px;
   margin-bottom:24px;
 }
@@ -264,6 +301,11 @@ footer{
     gap:60px;
   }
 }
+
+@media(max-width:600px){
+  nav{padding:0 18px}
+  nav a{margin-left:14px;font-size:13px}
+}
 </style>
 </head>
 
@@ -273,6 +315,7 @@ footer{
   <div class="gold" style="font-weight:600;">Akshay Sakpal</div>
   <div>
     <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
@@ -282,16 +325,16 @@ footer{
   <div>
     <h1><span class="gold">Akshay Sakpal</span><br>Data Analyst</h1>
     <p>
-      MSc Data Analytics — Dublin City University.  
-      I build reliable data systems and analytical frameworks that prevent costly decision errors.
+      MSc Data Analytics — Dublin City University.
+      I build reliable data systems, analytical frameworks and AI agents that prevent costly decision errors.
     </p>
     <br>
     <a href="#projects" class="btn btn-primary">View Work</a>
     <a href="mailto:akshaybsakpal@gmail.com" class="btn btn-outline">Email</a>
 
     <div class="socials">
-      <a href="https://github.com/akkisakpal" target="_blank" class="github-btn">GitHub</a>
-      <a href="https://www.linkedin.com/in/akshaysakpal07/" target="_blank" class="linkedin-btn">LinkedIn</a>
+      <a href="https://github.com/akkisakpal" target="_blank" rel="noopener" class="github-btn">GitHub</a>
+      <a href="https://www.linkedin.com/in/akshaysakpal07/" target="_blank" rel="noopener" class="linkedin-btn">LinkedIn</a>
     </div>
   </div>
 
@@ -305,8 +348,16 @@ footer{
   <h2><span class="gold">Projects</span></h2>
 
   <div class="project">
+    <div class="badge">New</div>
+    <h3>AI Finance Operations Agent</h3>
+    <p>AI agent that automates invoice processing — applies validation and risk rules to flag issues across different invoice conditions before they reach finance teams.</p>
+    <div class="metric">→ Deployed on Streamlit Community Cloud · Python · AI Agents</div>
+    <a href="https://github.com/akkisakpal/AI-Finance-Operations-Agent" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+  </div>
+
+  <div class="project">
     <h3>Multivariate Anomaly Detection — JVM Memory Leaks</h3>
-    <p>Predictive monitoring system detecting memory leak behaviour earlier than statistical baselines.</p>
+    <p>Predictive monitoring system detecting memory leak behaviour earlier than statistical baselines. MSc practicum, Dublin City University.</p>
     <div class="metric">→ ~40% earlier detection vs 3-sigma baseline</div>
   </div>
 
@@ -323,12 +374,36 @@ footer{
   </div>
 </section>
 
+<section id="experience">
+  <h2><span class="gold">Experience &amp; Education</span></h2>
+
+  <div class="project">
+    <h3>MSc Computing (Data Analytics)</h3>
+    <div class="meta">Dublin City University · Conferred 2025</div>
+    <p>Practicum in multivariate anomaly detection on system-level time-series metrics.</p>
+  </div>
+
+  <div class="project">
+    <h3>Kitchen Team Member — SSP Group, The Fallow, Dublin Airport</h3>
+    <div class="meta">May 2024 – Present</div>
+    <p>Run a section during high-volume airport service, oversee team members and check food quality against standards — process discipline and compliance under pressure.</p>
+    <div class="metric">→ SSP Chef Academy Level 1 · Food Safety &amp; HACCP Level 3 (supervisory)</div>
+  </div>
+
+  <div class="project">
+    <h3>BE Information Technology</h3>
+    <div class="meta">University of Mumbai · 2019–2022</div>
+    <p>Projects included a portable Bluetooth thermal printer and an Arduino-based IoT scientific calculator.</p>
+  </div>
+</section>
+
 <section id="skills">
   <h2><span class="gold">Skills</span></h2>
 
   <div class="skill-tabs">
     <div class="skill-tab active" data-tab="languages">Languages</div>
     <div class="skill-tab" data-tab="analysis">Analysis</div>
+    <div class="skill-tab" data-tab="bi">BI &amp; Reporting</div>
     <div class="skill-tab" data-tab="ml">Machine Learning</div>
     <div class="skill-tab" data-tab="engineering">Engineering</div>
   </div>
@@ -339,7 +414,7 @@ footer{
 
 <section id="contact">
   <h2><span class="gold">Contact</span></h2>
-  <p>Open to full-time Data Analyst or Data Engineer roles in Ireland.</p>
+  <p>Open to full-time Data Analyst, BI Analyst, Reporting Analyst, Data Scientist or Data Engineer roles in Ireland.</p>
   <br>
   <a href="mailto:akshaybsakpal@gmail.com" class="btn btn-primary">
     akshaybsakpal@gmail.com
@@ -349,42 +424,7 @@ footer{
 <footer>
   © 2026 Akshay Sakpal · Dublin, Ireland
   <div class="footer-links">
-    <a href="https://github.com/akkisakpal" class="github">GitHub</a>
-    <a href="https://www.linkedin.com/in/akshaysakpal07/" class="linkedin">LinkedIn</a>
+    <a href="https://github.com/akkisakpal" target="_blank" rel="noopener" class="github">GitHub</a>
+    <a href="https://www.linkedin.com/in/akshaysakpal07/" target="_blank" rel="noopener" class="linkedin">LinkedIn</a>
   </div>
-</footer>
-
-<script>
-const skillsData = {
-  languages:["Python","SQL","Bash"],
-  analysis:["Pandas","NumPy","EDA","Statistical Testing","Matplotlib"],
-  ml:["Scikit-learn","Isolation Forest","LSTM","DBSCAN","Time Series"],
-  engineering:["ETL Design","Data Validation","PostgreSQL","Git","Linux"]
-};
-
-const tabs = document.querySelectorAll('.skill-tab');
-const content = document.getElementById('skills-content');
-
-function loadSkills(category){
-  content.innerHTML="";
-  skillsData[category].forEach(skill=>{
-    const span=document.createElement('div');
-    span.className="skill";
-    span.innerText=skill;
-    content.appendChild(span);
-  });
-}
-
-tabs.forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    tabs.forEach(t=>t.classList.remove('active'));
-    tab.classList.add('active');
-    loadSkills(tab.dataset.tab);
-  });
-});
-
-loadSkills("languages");
-</script>
-
-</body>
-</html>
+</foo
